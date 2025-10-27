@@ -1,0 +1,44 @@
+<!-- Consegna del 27.10.25
+
+1.  Realizza una pagina HTML che presenti un form per l'inserimento di un valore intero ed un bottone, 
+    se premuto il bottone viene richiamata una funzione che determina se il numero è primo oppure no. 
+    In caso negativo calcola e comunica il numero primo successivo al numero inserito.
+
+-->
+<html>
+    <head>
+        <title>Es 6 di HTML</title>
+    </head>
+    <body>
+        Inserisci un numero.<br/>
+        <form>
+            <input type="text" id="numero" placeholder="Muoviti voglio andare a casa">
+            <input type="button" value="ammazzami" id="bottonepazzo" onclick="dopo_aver_cliccato()">
+        </form>
+        <script>
+            function dopo_aver_cliccato(){
+                let val = document.querySelector("#numero");
+                let num = parseInt(val.value);
+
+                function isPrime(n) {
+                    if (n <= 1) return false;
+                    for (let i = 2; i <= Math.sqrt(n); i++) {
+                        if (n % i === 0) return false;
+                    }
+                    return true;
+                }
+
+                if (isPrime(num)) {
+                    document.write(num + " è un numero primo.");
+                } else {
+                    document.write(num + " non è un numero primo.<br/>");
+                    let nextPrime = num + 1;
+                    while (!isPrime(nextPrime)) {
+                        nextPrime++;
+                    }
+                    document.write("Il numero primo successivo è: " + nextPrime);
+                }
+            }
+        </script>
+    </body>
+</html>

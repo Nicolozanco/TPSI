@@ -14,12 +14,22 @@
         <title>Es 5 di HTML</title>
     </head>
     <body>
+        Inserisci un numero.<br/>
         <form>
             <input type="text" id="numero" placeholder="Muoviti voglio andare a casa">
-
+            <input type="button" value="ammazzami" id="bottonepazzo" onclick="dopo_aver_cliccato()">
         </form>
         <script>
+            function dopo_aver_cliccato(){
+                let val = document.querySelector("#numero");
+                let lato = parseInt(val.value);
 
+                lato = Math.sqrt(lato);
+                document.write("Valore del lato: "+lato);
+
+                let perimetro = lato * 4;
+                document.write("<br/>Valore del perimetro: "+perimetro);
+            }
         </script>
     </body>
 </html>
