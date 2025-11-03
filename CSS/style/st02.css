@@ -1,0 +1,13 @@
+#titolo{
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+#sottotitolo{
+    font-size: 18px;
+    font-weight: semi-bold;
+    color: #666666;
+    margin-bottom: 100px;
+}
